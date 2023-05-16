@@ -1,5 +1,20 @@
 function ola()  {
-    alert("Olá, sou o Gustavo seja bem vindo ao meu site")
+    alert("Eu te amo sua chata")
 };
 
     ola();
+
+    function search(){
+        fetch("https://api.thecatapi.com/v1/images/search")
+        .then(data=>data.json())
+        .then(json=>{
+            document.getElementById("content").src=json[0].url
+        })
+    }
+    
+    
+    window.onload = () => {
+        search();
+    }
+    
+    gerar.addEventListener("click", () => search());
